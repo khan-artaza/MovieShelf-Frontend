@@ -22,7 +22,7 @@ const Movies = () => {
 
   const { register, handleSubmit, watch } = useForm(
     localStorage.getItem("filterData") && {
-    defaultValues : JSON.parse(localStorage.getItem("filterData"))
+    defaultValues : JSON.parse(localStorage.getItem("filterData")) || ""
    }
   );
 
