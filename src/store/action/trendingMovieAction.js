@@ -4,7 +4,7 @@ import { loadTP, loadTrndMovie } from '../slice/trendingMovieSlice';
 
 export const getTrendingMovie = (page) => async(dispatch, getState) =>{
     try {
-        const trMovie = await axios.get(`http://localhost:3000/movie/trending?page=${page}`)
+        const trMovie = await axios.get(`https://movieshelf-backend.onrender.com/movie/trending?page=${page}`)
 
         dispatch(loadTP(trMovie.data.totalPages))
         

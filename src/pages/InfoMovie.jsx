@@ -57,7 +57,7 @@ const InfoMovie = () => {
     try {
 
       const wishListRes = await toast.promise(
-        axios.post("http://localhost:3000/movie/wishlist", wishData, { withCredentials: true }),
+        axios.post("https://movieshelf-backend.onrender.com/movie/wishlist", wishData, { withCredentials: true }),
         {
           pending: "wishlisting...",
           success: "Wishlist added successful!",

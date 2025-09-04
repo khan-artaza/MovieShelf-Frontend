@@ -3,7 +3,7 @@ import { loadWishlistData } from "../slice/wishlistDataSlice";
 
 export const getWishlistData = () => async(dispatch, getState) =>{
     try {
-        const wishlistData = await axios.get("http://localhost:3000/movie/wishlist/get-all", {
+        const wishlistData = await axios.get("https://movieshelf-backend.onrender.com/movie/wishlist/get-all", {
             withCredentials: true
           })
         // console.log(wishlistData.data.wishlistData);

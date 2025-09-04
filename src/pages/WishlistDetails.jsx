@@ -22,7 +22,7 @@ const navigate = useNavigate()
     const data = { movieId: movieId };
     try {
       await toast.promise(
-        axios.delete(`http://localhost:3000/movie/wishlist/delete?movieId=${movieId}`, {
+        axios.delete(`https://movieshelf-backend.onrender.com/movie/wishlist/delete?movieId=${movieId}`, {
           data : data,
           withCredentials: true,
         }),
@@ -43,7 +43,7 @@ const navigate = useNavigate()
   const getMovieById = async (movie_id) => {
     try {
       const moviebyIdData = await axios.get(
-        `http://localhost:3000/movie/id?query=${movie_id}`
+        `https://movieshelf-backend.onrender.com/movie/id?query=${movie_id}`
       );
 
       return moviebyIdData.data.movie;
@@ -55,7 +55,7 @@ const navigate = useNavigate()
   const getTvById = async (movie_id) => {
     try {
       const moviebyIdData = await axios.get(
-        `http://localhost:3000/movie/tv/id?query=${movie_id}`
+        `https://movieshelf-backend.onrender.com/movie/tv/id?query=${movie_id}`
       );
 
       return moviebyIdData.data.tv;

@@ -3,7 +3,7 @@ import { loadUser } from "../slice/userSlice";
 
 export const getUser = () => async(dispatch, getState) => {
     try {
-        const userRes = await axios.get("http://localhost:3000/user/profile", {
+        const userRes = await axios.get("https://movieshelf-backend.onrender.com/user/profile", {
             withCredentials: true
           })
         console.log(userRes.data.user);
@@ -19,7 +19,7 @@ export const getUser = () => async(dispatch, getState) => {
 
 export const logoutUser = () => async(dispatch, getState) => {
     try {
-        const logoutRes = await axios.post("http://localhost:3000/auth/logout", {}, {withCredentials : true})
+        const logoutRes = await axios.post("https://movieshelf-backend.onrender.com/auth/logout", {}, {withCredentials : true})
         
         console.log(logoutRes);
         

@@ -4,7 +4,7 @@ import { loadCast, loadImdbData, loadMovieById } from '../slice/movieByIdSlice';
 export const getMovieById = (movie_id) => async(dispatch, getState) =>{
 
         try {
-                const moviebyIdData = await axios.get(`http://localhost:3000/movie/id?query=${movie_id}`)
+                const moviebyIdData = await axios.get(`https://movieshelf-backend.onrender.com/movie/id?query=${movie_id}`)
                 dispatch(loadMovieById(moviebyIdData.data.movie))
         
                 console.log(moviebyIdData.data.movie);
@@ -22,7 +22,7 @@ export const getMovieById = (movie_id) => async(dispatch, getState) =>{
 export const getCast = ( movie_id) => async(dispatch, getState) =>{
 
         try {
-            const cast = await axios.get(`http://localhost:3000/movie/cast?query=${movie_id}`)
+            const cast = await axios.get(`https://movieshelf-backend.onrender.com/movie/cast?query=${movie_id}`)
             
             dispatch(loadCast(cast.data.cast.cast))
             
@@ -39,7 +39,7 @@ export const getImdbData = (imdb_id) => async(dispatch, getState) =>{
     try {
         if(imdb_id){
 
-            const imdbdata = await axios.get(`http://localhost:3000/movie/rating?query=${imdb_id}`)
+            const imdbdata = await axios.get(`https://movieshelf-backend.onrender.com/movie/rating?query=${imdb_id}`)
             
             dispatch(loadImdbData(imdbdata.data.data))
         }
@@ -55,7 +55,7 @@ export const getTVbyId = (tv_id) => async(dispatch, getState) =>{
     console.log("gggg");
     
     try {
-        const tv = await axios.get(`http://localhost:3000/movie/tv/id?query=${tv_id}`)
+        const tv = await axios.get(`https://movieshelf-backend.onrender.com/movie/tv/id?query=${tv_id}`)
         console.log(tv);
         dispatch(loadMovieById(tv.data.tv))
         
@@ -69,7 +69,7 @@ export const getTvRating = (name) => async(dispatch, getState) =>{
     try {
         if(name){
 
-            const imdbdata = await axios.get(`http://localhost:3000/movie/tv/rating?query=${name}`)
+            const imdbdata = await axios.get(`https://movieshelf-backend.onrender.com/movie/tv/rating?query=${name}`)
             dispatch(loadImdbData(imdbdata.data.data))
             
         }else{

@@ -12,7 +12,7 @@ const Register = () => {
     console.log(data);
 
     toast.promise(
-     axios.post("http://localhost:3000/auth/register", data),
+     axios.post("https://movieshelf-backend.onrender.com/auth/register", data),
         {
           pending: "Registering user...",
           success: "Registration successful!",

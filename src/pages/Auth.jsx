@@ -25,7 +25,7 @@ const Auth = () => {
     try {
 
       const loginRes = await toast.promise(
-        axios.post("http://localhost:3000/auth/login", data, { withCredentials: true }),
+        axios.post("https://movieshelf-backend.onrender.com/auth/login", data, { withCredentials: true }),
         {
           pending: "Logging in...",
           success: "Login successful!",
