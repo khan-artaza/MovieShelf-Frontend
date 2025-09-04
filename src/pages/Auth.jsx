@@ -71,7 +71,7 @@ const Auth = () => {
         </div> 
         :
         <div className='pb-26'>
-        <img className='w-[90%] mx-auto mt-15' src="/images/login.png" alt="" />
+        <img className='w-[80%] mx-auto mt-15' src="/images/login.png" alt="" />
 
 <div className="heading px-4 tracking-tight">
   <h2 className='font-mvt text-5xl '>Login</h2>
