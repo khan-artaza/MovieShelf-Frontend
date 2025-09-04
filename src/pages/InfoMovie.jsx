@@ -138,7 +138,7 @@ const InfoMovie = () => {
         <section className={hidWish}>
 
         <div className="wishTitleCard w-full backdrop-blur-md h-screen fixed z-50">
-          <form onSubmit={handleSubmit(wishlistHandler)} className="w-[70%] flex flex-col gap-3 justify-center items-center px-8 py-16 bg-[var(--card-bg)] border-1 border-[var(--card-border)] rounded absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <form onSubmit={handleSubmit(wishlistHandler)} className="w-[70%] sm:w-[60%] xl:w-1/3 flex flex-col gap-3 justify-center items-center px-8 py-16 bg-[var(--card-bg)] border-1 border-[var(--card-border)] rounded absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <i onClick={toggleHandler} className="ri-close-large-line text-lg absolute top-2 right-3"></i>
             <label className="font-semibold text-xl font-mvt" htmlFor="wishlist-title">Wishlist Title</label>
             <input {...register("wishlistTitle", {required : "Wishlist title is required."})} className="border-none outline-none rounded py-2 text-center bg-[var(--card-border)]" id="wishlist-title" type="text" placeholder="title of your wishlist"/>
@@ -156,10 +156,10 @@ const InfoMovie = () => {
 
           <div className="absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent"></div>
 
-          <div className=" absolute bottom-3 w-full px-6 flex justify-between items-center">
+          <div className=" absolute xl:px-8 bottom-3 w-full px-6 flex justify-between items-center">
             <div className="flex flex-col gap-2 items-start">
               {formatted ? <h2 className="opacity-50">{formatted}</h2> : <></>}
-              <h1 className="text-4xl font-mvt font-black opacity-90">
+              <h1 className="text-4xl sm:text-5xl  font-mvt font-black opacity-90">
                 {movie.title}
               </h1>
             </div>
@@ -174,18 +174,18 @@ const InfoMovie = () => {
         <small>Loading...</small>
       )}
 
-      <section className="rate relative py-2 px-4 flex justify-start items-center gap-12">
+      <section className="rate relative py-2 sm:px-6 xl:px-12 sm:mt-5   px-4 flex justify-start items-center gap-12">
         <div className="imdb w-fit flex flex-col items-center py-2">
-          <img className="w-10" src="/images/imdb.png" alt="" />
+          <img className="w-10 sm:w-12" src="/images/imdb.png" alt="" />
           <div className="rating flex items-center gap-1 w-fit">
             <i className="ri-star-s-fill text-yellow-400 text-xl"></i>
             {imdbData ? (
               <>
-                <h2 className="font-semibold">
+                <h2 className="font-semibold sm:text-lg">
                   { imdbData?.Ratings?.[0]?.Value !== undefined ? (
                     imdbData.Ratings[0].Value.split("/")[0]
                   ) : (
-                    <span className="opacity-50">N/A</span>
+                    <span className="opacity-50 sm:text-lg">N/A</span>
                   )}
                 </h2>
                 {imdbData?.Ratings?.length > 0 ? (
@@ -200,13 +200,13 @@ const InfoMovie = () => {
           </div>
         </div>
         <div className="tomato w-fit flex flex-col items-center py-2">
-          <img className="w-10" src="/images/tomato.png" alt="" />
+          <img className="w-10 sm:w-12" src="/images/tomato.png" alt="" />
           {imdbData ? (
-            <h2 className="font-semibold">
+            <h2 className="font-semibold sm:text-lg">
               {imdbData.Ratings.length > 1 && imdbData.Ratings[1].Value ? (
                 imdbData.Ratings[1].Value
               ) : (
-                <span className="opacity-50">N/A</span>
+                <span className="opacity-50 sm:text-lg">N/A</span>
               )}
             </h2>
           ) : (
@@ -214,9 +214,9 @@ const InfoMovie = () => {
           )}
         </div>
 
-        <div className="year absolute right-5">
+        <div className="year absolute right-5 xl:right-12">
           {movie ? (
-            <div className="font-semibold text-[var(--special-color)]">
+            <div className="font-semibold text-[var(--special-color)] sm:text-lg">
               {movie.release_date.split("-")[0]}
             </div>
           ) : (
@@ -226,15 +226,15 @@ const InfoMovie = () => {
       </section>
 
       <section>
-        <div className="genreButtons flex gap-4 flex-wrap px-6 py-4">
+        <div className="genreButtons flex gap-4 flex-wrap px-6 xl:px-12 py-4">
           {genreRender}
         </div>
       </section>
 
       <Overview movie={movie} />
 
-      <section className="cast px-4 mt-4">
-        <h1 className="text-2xl">Cast</h1>
+      <section className="cast px-4 xl:px-12 xl:mt-12 sm:px-6 sm:mt-8 mt-4">
+        <h1 className="text-2xl sm:text-3xl">Cast</h1>
 
         <div className="cast-container flex whitespace-nowrap overflow-x-scroll justify-evenly items-center gap-5">
           {castRender}

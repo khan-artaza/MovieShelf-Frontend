@@ -25,7 +25,7 @@ const ZigZagCarousel = ({ arr, interval}) => {
 
   return (
       <Link to={`/infomovie/${orderedID[currentIndex]}`}>
-    <div className="w-[100vw] relative flex justify-center items-center bg-black overflow-hidden">
+    <div className="w-[100vw] sm:h-[60vh] relative flex justify-center items-center bg-black overflow-hidden">
       {
         orderedID[currentIndex] == 1141868 ?
         <img

@@ -20,11 +20,6 @@ const Movies = () => {
     );
   });
 
-  // const { register, handleSubmit, watch } = useForm(
-  //   localStorage.getItem("filterData") && {
-  //   defaultValues : JSON.parse(localStorage.getItem("filterData")) || ""
-  //  }
-  // );
 
   const { register, handleSubmit, watch } = useForm({
     defaultValues: JSON.parse(localStorage.getItem("filterData") || "{}")
@@ -104,7 +99,7 @@ const Movies = () => {
   const category = watch("categ");
 
   return (
-    <div className="pb-25">
+    <div className="pb-25 overflow-x-hidden">
       {bollyMovie && trendingMovie ? (
         <div className="if">
           <div className="top">
@@ -113,7 +108,7 @@ const Movies = () => {
 
           <form
             onSubmit={handleSubmit(submitHandler)}
-            className=" px-4 flex flex-col gap-1 justify-center items-center"
+            className="px-4 sm:w-[60%] xl:w-1/3 xl:gap-3 sm:mx-auto flex flex-col gap-1 justify-center items-center"
           >
             <h1 className="text-2xl px-4 mt-4">
               Filters{" "}
@@ -380,7 +375,7 @@ const Movies = () => {
             </button>
           </form>
 
-          <div className="film-container px-4  mt-5 grid grid-cols-2 gap-4">
+          <div className="film-container px-4 xl:px-12 xl:grid-cols-6  mt-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
             {render}
           </div>
           {

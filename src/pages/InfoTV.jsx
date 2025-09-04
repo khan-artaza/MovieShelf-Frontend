@@ -96,7 +96,7 @@ const InfoTV = () => {
             <div className="wishTitleCard w-full backdrop-blur-md h-screen fixed z-50">
               <form
                 onSubmit={handleSubmit(wishlistHandler)}
-                className="w-[70%] flex flex-col gap-3 justify-center items-center px-8 py-16 bg-[var(--card-bg)] border-1 border-[var(--card-border)] rounded absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                className="w-[70%] sm:w-[60%] xl:w-1/3 flex flex-col gap-3 justify-center items-center px-8 py-16 bg-[var(--card-bg)] border-1 border-[var(--card-border)] rounded absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               >
                 <i
                   onClick={toggleHandler}
@@ -138,28 +138,28 @@ const InfoTV = () => {
 
             <div className="absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent"></div>
 
-            <div className=" absolute bottom-3 w-full px-6 flex justify-between items-center">
+            <div className=" absolute bottom-3 xl:bottom-5 sm:bottom-4 w-full px-6 xl:px-12 flex justify-between items-center">
               <div className="flex flex-col gap-2 items-start">
-                <h2 className="opacity-50">{tv.number_of_seasons} Seasons</h2>
-                <h1 className="text-4xl font-mvt font-black opacity-90">
+                <h2 className="opacity-50 sm:text-xl">{tv.number_of_seasons} Seasons</h2>
+                <h1 className="text-4xl sm:text-5xl font-mvt font-black opacity-90">
                   {tv.name}
                 </h1>
               </div>
 
               <button onClick={openWishlistCard}>
-              <i className="ri-bookmark-2-fill text-3xl"></i>
+              <i className="ri-bookmark-2-fill text-3xl sm:text-4xl"></i>
             </button>
             </div>
           </section>
 
-          <section className="rate relative py-2 px-4 flex justify-start items-center gap-12">
+          <section className="rate relative py-2 px-4 sm:px-6 xl:px-12 flex justify-start items-center gap-12">
             <div className="imdb w-fit flex flex-col items-center py-2">
-              <img className="w-10" src="/images/imdb.png" alt="" />
+              <img className="w-10 sm:w-12" src="/images/imdb.png" alt="" />
               <div className="rating flex items-center gap-1 w-fit">
                 <i className="ri-star-s-fill text-yellow-400 text-xl"></i>
                 {imdb.imdbRating ? (
                   <>
-                    <h2 className="font-semibold">{imdb.imdbRating}</h2>
+                    <h2 className="font-semibold sm:text-lg">{imdb.imdbRating}</h2>
 
                     <span className="text-sm opacity-50 font-thin">/10</span>
                   </>
@@ -169,22 +169,22 @@ const InfoTV = () => {
               </div>
             </div>
 
-            <div className="year absolute right-5">
-              <div className="font-semibold text-[var(--special-color)]">
+            <div className="year absolute right-5 xl:right-12">
+              <div className="font-semibold sm:text-lg text-[var(--special-color)]">
                 {imdb.year}
               </div>
             </div>
           </section>
 
           <section className="genre">
-            <div className="genreButtons flex gap-4 flex-wrap px-6 py-4">
+            <div className="genreButtons flex gap-4 flex-wrap px-6 xl:px-12 py-4">
               {genreRender}
             </div>
           </section>
           <Overview movie={tv} />
 
-          <section className="seasons px-4 mt-5">
-            <h1 className=" text-2xl">Seasons</h1>
+          <section className="seasons px-4 sm:px-6 xl:px-12 mt-5 xl:mt-12">
+            <h1 className=" text-2xl sm:text-3xl">Seasons</h1>
 
             <div className="seasonContainer mt-2 w-full overflow-x-auto flex items-center justify-between gap-2 ">
               {tv.seasons.map((tv, idx) => {

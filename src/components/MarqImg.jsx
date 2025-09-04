@@ -5,7 +5,7 @@ const MarqImg = ({ imgPath }) => {
     <img
       src={`images/${imgPath}`}
       alt=""
-      className="w-18 object-contain flex-shrink-0"
+      className="w-18 object-contain flex-shrink-0 sm:w-22"
     />
   );
 };

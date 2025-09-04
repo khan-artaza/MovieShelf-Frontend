@@ -71,14 +71,14 @@ const Auth = () => {
         </div> 
         :
         <div className='pb-26'>
-        <img className='w-[80%] mx-auto mt-15' src="/images/login.png" alt="" />
+        <img className='w-[80%] mx-auto mt-15 sm:w-1/2 xl:w-1/6 xl:mt-20' src="/images/login.png" alt="" />
 
-<div className="heading px-4 tracking-tight">
+<div className="heading px-4 tracking-tight xl:mx-auto sm:text-center">
   <h2 className='font-mvt text-5xl '>Login</h2>
   <p className='text-[var(--special-color)] mt-1'>Please sign in to continue</p>
 </div>
 
-<form onSubmit={handleSubmit(submitHandler)} className='px-4 mt-5 flex flex-col gap-2'>
+<form onSubmit={handleSubmit(submitHandler)} className='px-4 sm:w-[60%] xl:w-1/3 sm:mx-auto mt-5 flex flex-col gap-2 '>
 
 <div className='username bg-[var(--card-bg)] px-4 py-3 rounded-full flex items-center gap-4'>
 <i className="ri-user-line opacity-75 text-xl"></i>

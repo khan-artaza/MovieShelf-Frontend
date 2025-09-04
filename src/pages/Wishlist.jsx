@@ -51,11 +51,11 @@ const Wishlist = () => {
 
   return (
     <>
-      <h2 className="font-mvt mt-20 font-bold text-4xl px-4">Your Wishlist</h2>
+      <h2 className="font-mvt mt-20 xl:mt-30 xl:px-12 font-bold text-4xl px-4 sm:text-5xl sm:px-8">Your Wishlist</h2>
       {
-      wishlistData.length > 0? <><div className="px-4 mt-5 items-center w-[90%] mx-auto flex flex-wrap gap-4">{render}</div></> : 
+      wishlistData.length > 0? <><div className="px-4 mt-5 items-center w-[90%] mx-auto flex flex-wrap gap-4 xl:gap-12">{render}</div></> : 
       <div className="flex flex-col w-[90%] mx-auto justify-center items-center pt-8 gap-4">
-        <img className="w-[90%]" src="/images/empty.png" alt="" />
+        <img className="w-[90%] sm:w-1/2 xl:w-1/4" src="/images/empty.png" alt="" />
         <h2 className="text-4xl text-center font-semibold tracking-tight text-[var(--special-color)]">No items in your wishlisht!</h2>
       </div>
       }

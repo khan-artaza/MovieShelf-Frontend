@@ -139,7 +139,7 @@ const navigate = useNavigate()
       return (
         <div
           key={id}
-          className="movie-card relative w-full h-75 rounded-lg border-1 border-[var(--card-border)] bg-[var(--card-bg)] pb-3 pt-2 px-2"
+          className="movie-card xl:w-1/4 relative w-full h-75 rounded-lg border-1 border-[var(--card-border)] bg-[var(--card-bg)] pb-3 pt-2 px-2"
         >
           <i
             onClick={()=>oneDeleteHandler(movie.id)}
@@ -185,8 +185,8 @@ const navigate = useNavigate()
   }
 
   return (
-    <div>
-      <h3 className="text-5xl font-mvt font-semibold mt-20 px-4">
+    <div className="xl:px-12">
+      <h3 className="text-5xl font-mvt font-semibold mt-20 xl:mt-30 px-4 ">
         {wishTitle}
       </h3>
 

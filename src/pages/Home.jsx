@@ -52,38 +52,38 @@ const Home = () => {
   return (
     trendingMovie ? <div>
       <section className="hero transition-all duration-500 relative w-full">
-        <img className="" src={HeroPosterURL} alt="movie poster" />
+        <img className="sm:h-[70vh] sm:w-full sm:object-cover xl:h-screen" src={HeroPosterURL} alt="movie poster" />
 
         
 
         <div className="absolute z-30 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full flex flex-col items-center justify-center">
-          <h1 className="sp-font text-8xl uppercase">
+          <h1 className="sp-font text-8xl uppercase xl:text-[150px]">
             Your Movie <br /> Your Shelf
           </h1>
-          <p className="most-font w-[80%] font-medium text-lg special-color opacity-80">
+          <p className="most-font w-[80%] font-medium text-lg special-color opacity-80 sm:text-2xl">
             Discover, track, and explore the world of cinema—your way.
           </p>
         </div>
 
         <div className=" absolute h-full w-full bg-black opacity-75 bottom-0 z-20 inset-0"></div>
 
-        <div className="border-[0.2px] border-zinc-500/40 w-[90%] left-1/2 -translate-x-1/2 absolute bottom-5 z-30 flex items-center gap-4 text-xl font-bold rounded-2xl px-4 py-2 bg-zinc-800/70 justify-between">
+        <div className="border-[0.2px] border-zinc-500/40 w-[90%] xl:w-[40%] left-1/2 -translate-x-1/2 absolute bottom-5 z-30 flex items-center gap-4 text-xl font-bold rounded-2xl px-4 py-2 bg-zinc-800/70 justify-between sm:px-6 sm:py-4 xl:px-8 xl:py-6">
           <img
             className="w-20 aspect-square object-cover rounded-xl"
             src={HeroPosterURL}
             alt=""
           />
-          <h2 className="font-mvt text-2xl">
+          <h2 className="font-mvt text-2xl sm:text-3xl">
             {trendingMovie[randomIndex]?.title}
           </h2>
 
-         <Link to={`/infomovie/${trendingMovie[randomIndex]?.id}`} className="w-[22%]"><button className="text-xs px-1 w-full py-2 rounded-lg bg-sp-color">
+         <Link to={`/infomovie/${trendingMovie[randomIndex]?.id}`} className="w-[22%]"><button className="text-xs px-1 w-full py-2 sm:text-lg rounded-lg bg-sp-color">
             Explore
           </button></Link> 
         </div>
       </section>
 
-      <section className="marq overflow-hidden mt-5 relative">
+      <section className="marq overflow-hidden mt-5 relative xl:mx-auto xl:w-1/2">
         <div
           className="marq-track"
         >
@@ -96,9 +96,19 @@ const Home = () => {
           <MarqImg imgPath="hotstar.png" />
           <MarqImg imgPath="apple-tv.png" />
           <MarqImg imgPath="prime-video.png" />
+          {/* duplicate */}
+          <MarqImg imgPath="netflix.png" />
+          <MarqImg imgPath="hotstar.png" />
+          <MarqImg imgPath="apple-tv.png" />
+          <MarqImg imgPath="prime-video.png" />
+          {/* duplicate */}
+          <MarqImg imgPath="netflix.png" />
+          <MarqImg imgPath="hotstar.png" />
+          <MarqImg imgPath="apple-tv.png" />
+          <MarqImg imgPath="prime-video.png" />
 
         </div>
-        <p className="text-center mt-4 mx-auto opacity-60 w-[70%]">
+        <p className="text-center mt-4 mx-auto opacity-60 w-[70%] sm:text-xl">
           Explore movies from all major OTT platforms
         </p>
 
@@ -106,10 +116,10 @@ const Home = () => {
         <div className="absolute top-0 w-[15%] right-0 h-[80%] bg-gradient-to-l from-[var(--bg-color)]  to-transparent"></div>
       </section>
 
-      <section className="bottom px-6 mt-8 pb-25">
-        <h1 className="font-semibold text-2xl">Trending <span className="text-[var(--special-color)]">Now</span></h1>
+      <section className="bottom px-6 xl:px-12 mt-8 pb-25">
+        <h1 className="font-semibold text-2xl xl:text-4xl">Trending <span className="text-[var(--special-color)]">Now</span></h1>
 
-        <div className="movie-container mt-5 grid grid-cols-2 gap-4">
+        <div className="movie-container mt-5 grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4">
          {render}
         </div>
 

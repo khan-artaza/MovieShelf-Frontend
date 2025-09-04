@@ -3,7 +3,7 @@ import React from 'react'
 const SeasonCard = ({tv, idx}) => {
 
   return (
-    <div key={idx} className="seasonCard shrink-0 relative flex gap-3 justify-between items-center text-sm w-[80%] p-1 h-28 border-1 border-[var(--card-border)] rounded-xl bg-[var(--card-bg)]">
+    <div key={idx} className="seasonCard shrink-0 relative flex gap-3 justify-between items-center text-sm w-[80%] sm:w-[60%] xl:w-1/3 p-1 h-28 border-1 border-[var(--card-border)] rounded-xl bg-[var(--card-bg)]">
                 <img className="w-[30%] h-full object-cover object-top rounded-xl" src={`https://image.tmdb.org/t/p/original${tv.poster_path}`} alt="" />
                 <div className="w-[80%] h-full flex flex-col gap-0 justify-start">
 
