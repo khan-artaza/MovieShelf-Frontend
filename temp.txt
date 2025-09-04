@@ -1,0 +1,93 @@
+
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom'
+import { getCast, getMovieById } from '../store/action/movieByIdAction';
+import { useEffect } from 'react';
+
+const MovieDetails = () => {
+    const params = useParams()
+    const dispatch = useDispatch()
+    let movie_id = params.id
+
+    const movie = useSelector((state)=>state.movieById.data)
+    console.log(movie);
+
+    const cast = useSelector((state)=>state.movieById.cast)
+    console.log(cast);
+
+  const backdropURL = movie.backdrop_path 
+    ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
+    : null;
+
+    useEffect(()=>{
+        console.log("oooo");
+        
+        dispatch(getCast(movie_id));
+        dispatch(getMovieById(movie_id));
+    },[dispatch, movie_id])
+
+
+    
+
+    const castRender = cast?.map((cst, idx)=>{
+
+        const profilePath = cst.profile_path
+
+        return  <div key={idx} className="castElem border px-2 mt-2 w-30 flex flex-col justify-center items-center h-50 gap-1">
+        <img className='w-22 aspect-square object-cover object-top rounded-full' src={`https://image.tmdb.org/t/p/original${profilePath}`} alt="" />
+        <h3 className='font-semibold border text-sm w-full leading-none text-[var(--special-color)]'>{cst.name}</h3>
+        <p className='text-center text-xs opacity-40 border break-normal'>{cst.character}</p>
+    </div>
+    })
+
+    
+
+    const genreRender = movie?.genres.map((gn, idx)=>{
+        return <button key={idx} className='border bg-[#351d22] px-4 py-1 rounded-3xl text-[var(--special-color)] border-[var(--special-color)] '>{gn.name}</button>
+    })
+    
+    let secURL = movie?.poster_path;
+    const posterURL = `https://image.tmdb.org/t/p/original${secURL}`;
+
+    // let backdropURL = `https://image.tmdb.org/t/p/original${movie.backdrop_path}`;
+    
+
+    
+  return (
+    <div className='pb-20'>
+        <section className='w-full h-[50vh] relative'>
+     <img className=' w-full h-full object-cover' src={backdropURL} alt="" />
+
+        <div className="absolute w-full h-full bottom-0 bg-gradient-to-t from-black to-transparent"></div>
+       
+        <div className=' absolute bottom-3 w-full px-6 flex justify-between items-center'>
+            <h1 className='text-4xl font-mvt font-black opacity-90'>{movie.title}</h1>
+            <button><i className="ri-bookmark-2-fill text-3xl opacity-75"></i></button>
+        </div>
+        </section>
+
+        <section>
+            <div className="genreButtons flex gap-4 flex-wrap px-6 py-4">
+                {genreRender}
+            </div>
+        </section>
+
+        <section className="overview px-4">
+            <h1 className='text-2xl'>Overview</h1>
+            <p className='mt-2 text-sm opacity-50'>{movie.overview}</p>
+        </section>
+
+        <section className="cast px-4 mt-4">
+            <h1 className='text-2xl'>Cast</h1>
+
+            <div className="cast-container border flex whitespace-nowrap overflow-x-scroll justify-evenly items-center gap-10">
+               
+                {castRender}
+            </div>
+        </section>
+
+    </div>
+  )
+}
+
+export default MovieDetails

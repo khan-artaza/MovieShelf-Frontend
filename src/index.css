@@ -1,0 +1,125 @@
+@font-face {
+  font-family: machina;
+  src: url("../public/fonts/NeueMachina-Regular.otf");
+}
+
+@font-face{
+  font-family: trailer;
+  src: url("../public/fonts/TT\ Trailers\ Trial\ ExtraBold.ttf")
+}
+
+@import "tailwindcss";
+
+:root{
+  --bg-color : #091A23;
+  --text-color : #ffff;
+  --most-text : machina;
+  --special-color : #FF4438;
+  --special-text : trailer;
+  --card-bg : #0D212C;
+  --card-border : #163444;
+}
+
+[data-theme = "light"]{
+  --bg-color : #ffff;
+  --text-color : #212121;
+}
+
+body{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s;
+  box-sizing: border-box;
+  font-family: var(--most-text);
+}
+
+.most-font{
+  font-family: var(--most-text);
+}
+
+.sp-font{
+  font-family: var(--special-text);
+}
+
+.logo-font{
+  font-family: "Playfair Display", serif;
+}
+
+.text-sp-color{
+  color: var(--special-color);
+}
+
+button{
+  cursor: pointer;
+}
+
+.bg-sp-color{
+  background-color: var(--special-color);
+}
+
+.font-mvt{
+  font-family: "Outfit", sans-serif;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.marq-track {
+  display: flex;
+  gap: 2rem; /* match your Tailwind gap-8 */
+  flex-wrap: nowrap;
+  animation: marquee 10s linear infinite;
+}
+
+.marq-track img {
+  flex-shrink: 0;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 65px;
+  aspect-ratio: 1;
+  position: relative;
+}
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset var(--special-color);
+  animation: l4 2.5s infinite;
+}
+.loader:after {
+  animation-delay: -1.25s;
+}
+@keyframes l4 {
+  0% {
+    inset: 0 35px 35px 0;
+  }
+  12.5% {
+    inset: 0 35px 0 0;
+  }
+  25% {
+    inset: 35px 35px 0 0;
+  }
+  37.5% {
+    inset: 35px 0 0 0;
+  }
+  50% {
+    inset: 35px 0 0 35px;
+  }
+  62.5% {
+    inset: 0 0 0 35px;
+  }
+  75% {
+    inset: 0 0 35px 35px;
+  }
+  87.5% {
+    inset: 0 0 35px 0;
+  }
+  100% {
+    inset: 0 35px 35px 0;
+  }
+}
