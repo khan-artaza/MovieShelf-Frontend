@@ -20,7 +20,7 @@ const Register = () => {
         }
     )
 
-    navigate("/login")
+    navigate("/auth")
     
   }
 
