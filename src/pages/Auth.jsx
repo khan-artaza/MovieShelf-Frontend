@@ -70,7 +70,7 @@ const Auth = () => {
 
         </div> 
         :
-        <div className='pb-26'>
+        <div className='pb-26 xl:pb-0'>
         <img className='w-[80%] mx-auto mt-15 sm:w-1/2 xl:w-1/6 xl:mt-20' src="/images/login.png" alt="" />
 
 <div className="heading px-4 tracking-tight xl:mx-auto sm:text-center">
