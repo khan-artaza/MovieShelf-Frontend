@@ -182,13 +182,13 @@ const InfoMovie = () => {
             {imdbData ? (
               <>
                 <h2 className="font-semibold">
-                  {imdbData && imdbData.Ratings[0].Value ? (
+                  { imdbData?.Ratings?.[0]?.Value !== undefined ? (
                     imdbData.Ratings[0].Value.split("/")[0]
                   ) : (
                     <span className="opacity-50">N/A</span>
                   )}
                 </h2>
-                {imdbData.Ratings.length > 0 ? (
+                {imdbData?.Ratings?.length > 0 ? (
                   <span className="text-sm opacity-50 font-thin">/10</span>
                 ) : (
                   ""
