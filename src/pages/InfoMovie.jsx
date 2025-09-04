@@ -203,7 +203,7 @@ const InfoMovie = () => {
           <img className="w-10" src="/images/tomato.png" alt="" />
           {imdbData ? (
             <h2 className="font-semibold">
-              {imdbData.Ratings.length > 1 ? (
+              {imdbData.Ratings.length > 1 && imdbData.Ratings[1].Value ? (
                 imdbData.Ratings[1].Value
               ) : (
                 <span className="opacity-50">N/A</span>
