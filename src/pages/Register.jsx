@@ -55,7 +55,7 @@ const Register = () => {
         <button className='bg-[var(--special-color)] w-full px-4 py-3 rounded-full font-semibold text-xl' type='submit'>Sign up</button>
       </form>
 
-      <Link to={"/login"}><p className='px-4 w-full text-center mt-2 text-sm'><span className='opacity-50'>Already have account?</span> <span className='text-[var(--special-color)]'>Sign in</span></p></Link>
+      <Link to={"/auth"}><p className='px-4 w-full text-center mt-2 text-sm'><span className='opacity-50'>Already have account?</span> <span className='text-[var(--special-color)]'>Sign in</span></p></Link>
       
 
     </div>
