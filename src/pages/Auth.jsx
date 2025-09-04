@@ -70,7 +70,7 @@ const Auth = () => {
 
         </div> 
         :
-        <>
+        <div className='pb-26'>
         <img className='w-[90%] mx-auto mt-15' src="/images/login.png" alt="" />
 
 <div className="heading px-4 tracking-tight">
@@ -96,7 +96,7 @@ const Auth = () => {
 </form>
 
 <Link to={"/register"}><p className='px-4 w-full text-center mt-2 text-sm'><span className='opacity-50'>Don't have account?</span> <span className='text-[var(--special-color)]'>Sign up</span></p></Link>
-        </>
+        </div>
       }
 
        
