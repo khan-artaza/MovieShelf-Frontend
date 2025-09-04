@@ -8,8 +8,7 @@ const Navbar = () => {
     <NavLink to={"/"} className={'logo-font cursor-pointer tracking-tighter italic font-bold text-sp-color xl:text-4xl xl:hidden'}>Movie<span className='font-thin'>Shelf</span></NavLink>
 
 
-    {/* <NavLink className={'most-font'}>Home</NavLink>
-    <NavLink className={'most-font'}>Wishlist</NavLink> */}
+    
     </div>
 
     <div className='bg-transparent w-full h-20 rounded-t fixed top-[-5px] z-50 hidden xl:block px-12 text-xl'>
